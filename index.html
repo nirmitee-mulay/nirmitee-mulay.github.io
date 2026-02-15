@@ -12,213 +12,237 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             background: #000;
-            color: #ececec;
-            display: flex;
-            min-height: 100vh;
+            color: #e8e8e8;
         }
 
-        /* Sidebar - Fixed Left */
-        .sidebar {
-            width: 260px;
-            background: #0d0d0d;
-            border-right: 1px solid #2d2d2d;
-            padding: 2rem 1.5rem;
-            position: fixed;
-            left: 0;
+        /* Top Navigation */
+        .top-nav {
+            background: #0a0a0a;
+            border-bottom: 1px solid #222;
+            padding: 0 40px;
+            position: sticky;
             top: 0;
-            height: 100vh;
-            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .top-nav nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 5px;
+        }
+
+        .top-nav a {
+            padding: 18px 20px;
+            color: #999;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .top-nav a:hover {
+            color: #e8e8e8;
+        }
+
+        .top-nav a.active {
+            color: #c9a96e;
+            border-bottom-color: #c9a96e;
+        }
+
+        /* Layout: Sidebar + Main */
+        .container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Sidebar - Photo and Links Only */
+        aside {
+            padding: 40px 30px;
+            border-right: 1px solid #222;
+            position: sticky;
+            top: 60px;
+            height: calc(100vh - 60px);
         }
 
         .profile-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            overflow: hidden;
-            border: 2px solid #2d2d2d;
-            background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #222;
         }
 
         .profile-photo img {
-            width: 100%;
-            height: 100%;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
             object-fit: cover;
+            border: 3px solid #222;
+            margin-bottom: 15px;
         }
 
-        .profile-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 0.25rem;
+        .profile-photo h1 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 6px;
         }
 
-        .profile-title {
-            font-size: 0.9rem;
-            color: #c9c9c9;
-            text-align: center;
-            margin-bottom: 0.5rem;
+        .profile-photo .affiliation {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 3px;
         }
 
-        .profile-location {
-            font-size: 0.85rem;
-            color: #8e8e8e;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #2d2d2d;
+        .profile-photo .location {
+            font-size: 13px;
+            color: #666;
         }
 
-        /* Navigation */
-        .nav-links {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #2d2d2d;
-        }
-
-        .nav-links a {
+        /* Contact Links */
+        .contact-links a {
             display: block;
-            padding: 0.6rem 0.75rem;
-            color: #c9c9c9;
+            padding: 10px 15px;
+            color: #777;
             text-decoration: none;
-            font-size: 0.9rem;
-            border-radius: 4px;
-            margin-bottom: 0.25rem;
+            font-size: 14px;
+            border-radius: 5px;
             transition: all 0.2s;
+            margin-bottom: 3px;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            background: #1a1a1a;
-            color: #d4a574;
-        }
-
-        /* Social Links */
-        .social-links a {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 0.75rem;
-            color: #8e8e8e;
-            text-decoration: none;
-            font-size: 0.85rem;
-            border-radius: 4px;
-            margin-bottom: 0.25rem;
-            transition: all 0.2s;
-        }
-
-        .social-links a:hover {
-            background: #1a1a1a;
-            color: #c9c9c9;
-        }
-
-        .social-links svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        /* Footer */
-        .sidebar-footer {
-            font-size: 0.75rem;
-            color: #8e8e8e;
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid #2d2d2d;
+        .contact-links a:hover {
+            background: #0f0f0f;
+            color: #999;
         }
 
         /* Main Content */
-        .main {
-            margin-left: 260px;
-            padding: 3rem 4rem;
-            flex: 1;
-            max-width: 1000px;
+        main {
+            padding: 50px 80px;
+            max-width: 900px;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        main > p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #ccc;
+            margin-bottom: 30px;
         }
 
         h2 {
-            font-size: 1.8rem;
-            margin: 2rem 0 1rem;
+            font-size: 26px;
+            margin: 40px 0 20px 0;
+            font-weight: 600;
         }
 
-        p {
-            color: #c9c9c9;
-            line-height: 1.7;
-            margin-bottom: 1rem;
+        .project {
+            background: #0a0a0a;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 18px;
+            transition: border-color 0.2s;
         }
 
-        .card {
-            background: #0d0d0d;
-            border: 1px solid #2d2d2d;
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
+        .project:hover {
+            border-color: #c9a96e;
         }
 
-        .card:hover {
-            border-color: #d4a574;
+        .project h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
-        .card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+        .project p {
+            font-size: 15px;
+            color: #999;
+            margin-bottom: 10px;
         }
 
-        .card p {
-            font-size: 0.9rem;
-        }
-
-        .card-link {
-            color: #d4a574;
+        .project a {
+            color: #c9a96e;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 14px;
+        }
+
+        .news {
+            background: #0a0a0a;
+            border-left: 3px solid #c9a96e;
+            padding: 18px 22px;
+            margin-bottom: 12px;
+            border-radius: 5px;
+        }
+
+        .news .date {
+            font-size: 11px;
+            color: #c9a96e;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .news h3 {
+            font-size: 16px;
+            margin: 6px 0;
+        }
+
+        .news p {
+            font-size: 14px;
+            color: #999;
+            margin: 0 0 8px 0;
+        }
+
+        .news a {
+            color: #c9a96e;
+            text-decoration: none;
+            font-size: 13px;
         }
 
         /* Mobile */
-        @media (max-width: 968px) {
-            .sidebar {
-                width: 200px;
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 240px 1fr;
             }
-            .main {
-                margin-left: 200px;
-                padding: 2rem;
+            main {
+                padding: 40px 50px;
             }
         }
 
         @media (max-width: 768px) {
-            .sidebar {
-                transform: translateX(-100%);
-                z-index: 1000;
+            .top-nav {
+                padding: 0 20px;
             }
-            .main {
-                margin-left: 0;
-                padding: 2rem 1.5rem;
+            .top-nav nav {
+                overflow-x: auto;
+            }
+            .container {
+                grid-template-columns: 1fr;
+            }
+            aside {
+                position: static;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #222;
+                padding: 30px 20px;
+            }
+            .profile-photo img {
+                width: 120px;
+                height: 120px;
+            }
+            main {
+                padding: 30px 20px;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="profile-photo">
-            <img src="images/profile.jpg" alt="Nirmitee Mulay" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:0.75rem;color:#8e8e8e;text-align:center;padding:1rem;\'>Add photo</div>'">
-        </div>
-        
-        <h1 class="profile-name">Nirmitee Mulay</h1>
-        <p class="profile-title">PhD Student<br>BCBL, Spain</p>
-        <p class="profile-location">📍 San Sebastian</p>
-
-        <nav class="nav-links">
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <nav>
             <a href="index.html" class="active">Home</a>
             <a href="research.html">Research</a>
             <a href="publications.html">Publications</a>
@@ -227,93 +251,84 @@
             <a href="blog.html">Blog</a>
             <a href="contact.html">Contact</a>
         </nav>
-
-        <div class="social-links">
-            <a href="mailto:nirmiteemulay@gmail.com">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
-                </svg>
-                Email
-            </a>
-            <a href="#" target="_blank">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.5 3.5L12 5l7.5 8-4.5-3.5z"/>
-                </svg>
-                Scholar
-            </a>
-            <a href="#" target="_blank">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 5.378c.525 0 .947.431.947.947 0 .525-.422.947-.947.947-.516 0-.947-.422-.947-.947 0-.516.431-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V8.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V8.416zm1.444 8.847h2.297c2.359 0 4.028-1.313 4.028-3.822 0-2.09-1.313-3.831-3.85-3.831h-2.475v7.653z"/>
-                </svg>
-                ORCID
-            </a>
-            <a href="https://github.com/nirmitee-mulay" target="_blank">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                GitHub
-            </a>
-            <a href="#" target="_blank">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 10.5c-1.5-3-4-6-6-6C3 4.5 1.5 6.5 1.5 9c0 4.5 3 7.5 6 7.5 1.5 0 3-.75 4.5-2.25C13.5 15.75 15 16.5 16.5 16.5c3 0 6-3 6-7.5 0-2.5-1.5-4.5-4.5-4.5-2 0-4.5 3-6 6z"/>
-                </svg>
-                Bluesky
-            </a>
-        </div>
-
-        <div class="sidebar-footer">
-            <p>&copy; 2026</p>
-        </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="main">
-        <p style="font-size: 1.1rem;">
-            I explore the boundaries of conscious and unconscious processing through psychophysics, 
-            fMRI, and computational approaches. My work focuses on visual perception, working memory, 
-            and emotional experience.
-        </p>
+    <div class="container">
+        <!-- Sidebar: Photo + Links Only -->
+        <aside>
+            <div class="profile-photo">
+                <img src="images/profile.jpg" alt="Nirmitee Mulay" onerror="this.src='data:image/svg+xml,%3Csvg width=\'180\' height=\'180\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'180\' height=\'180\' fill=\'%23151515\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23555\' font-size=\'12\'%3EAdd Photo%3C/text%3E%3C/svg%3E'">
+                <h1>Nirmitee Mulay</h1>
+                <div class="affiliation">BCBL, Spain</div>
+                <div class="location">📍 San Sebastian</div>
+            </div>
 
-        <h2>Research</h2>
-        
-        <div class="card">
-            <h3>🧠 Unconscious Working Memory</h3>
-            <p>Can information be maintained without awareness? Using bias-free ensemble paradigms.</p>
-            <a href="research.html" class="card-link">Learn more →</a>
-        </div>
+            <div class="contact-links">
+                <a href="mailto:nirmiteemulay@gmail.com">Email</a>
+                <a href="#" target="_blank">Google Scholar</a>
+                <a href="#" target="_blank">ORCID</a>
+                <a href="https://github.com/nirmitee-mulay" target="_blank">GitHub</a>
+                <a href="#" target="_blank">Bluesky</a>
+            </div>
+        </aside>
 
-        <div class="card">
-            <h3>👁️ Metacognition</h3>
-            <p>Investigating metacognitive judgments about unconscious perceptions.</p>
-            <a href="research.html" class="card-link">Learn more →</a>
-        </div>
+        <!-- Main Content -->
+        <main>
+            <p>
+                I explore the boundaries of conscious and unconscious processing through psychophysics, 
+                fMRI, and computational approaches. My work focuses on visual perception, working memory, 
+                and emotional experience. I'm passionate about rigorous methodology and open science.
+            </p>
 
-        <div class="card">
-            <h3>💭 Emotional Neurofeedback</h3>
-            <p>Using real-time fMRI to understand and regulate emotional experiences.</p>
-            <a href="research.html" class="card-link">Learn more →</a>
-        </div>
+            <h2>Research</h2>
 
-        <h2>Latest</h2>
-        
-        <div class="card">
-            <p style="color: #d4a574; font-size: 0.85rem; margin-bottom: 0.5rem;">DEC 2025</p>
-            <h3>New Preprint</h3>
-            <p>"Unmasking Unconscious Working Memory" on PsyArXiv</p>
-            <a href="https://doi.org/10.31234/osf.io/234ru_v1" class="card-link" target="_blank">Read →</a>
-        </div>
+            <div class="project">
+                <h3>🧠 Unconscious Working Memory</h3>
+                <p>Can information be maintained without awareness? Using bias-free ensemble paradigms to investigate.</p>
+                <a href="research.html">Learn more →</a>
+            </div>
+
+            <div class="project">
+                <h3>👁️ Metacognition</h3>
+                <p>Investigating metacognitive judgments about unconscious face ensemble perceptions.</p>
+                <a href="research.html">Learn more →</a>
+            </div>
+
+            <div class="project">
+                <h3>💭 Emotional Neurofeedback</h3>
+                <p>Using real-time fMRI to understand and regulate emotional experiences.</p>
+                <a href="research.html">Learn more →</a>
+            </div>
+
+            <h2>Latest</h2>
+
+            <div class="news">
+                <div class="date">Dec 2025</div>
+                <h3>New Preprint</h3>
+                <p>"Unmasking Unconscious Working Memory" now on PsyArXiv</p>
+                <a href="https://doi.org/10.31234/osf.io/234ru_v1" target="_blank">Read →</a>
+            </div>
+
+            <div class="news">
+                <div class="date">Jul 2025</div>
+                <h3>ASSC Presentation</h3>
+                <p>Oral talk at ASSC in Heraklion, Greece</p>
+            </div>
+
+            <div class="news">
+                <div class="date">Mar 2025</div>
+                <h3>Sigma Sessions</h3>
+                <p>Co-founded initiative promoting rigorous research at BCBL</p>
+            </div>
+        </main>
     </div>
 
     <script>
-        // Set active nav link
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
+        // Highlight active page in nav
+        const page = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.top-nav a').forEach(a => {
+            if (a.getAttribute('href') === page) a.classList.add('active');
+            else a.classList.remove('active');
         });
     </script>
 </body>
