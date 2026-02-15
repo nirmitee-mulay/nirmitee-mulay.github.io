@@ -5,168 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Nirmitee Mulay</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Mobile Menu Toggle -->
-    <div class="mobile-menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('active')">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="top-nav">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="scicomm.html">SciComm</a>
+            <a href="cv.html">CV</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </div>
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="sidebar-content">
-            <!-- Profile Section -->
-            <div class="profile-section">
-                <div class="profile-photo">
-                    <img src="images/profile.jpg" alt="Nirmitee Mulay" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="placeholder-photo" style="display: none;">
-                        Add photo as images/profile.jpg
-                    </div>
-                </div>
-                <h1 class="profile-name">Nirmitee Mulay</h1>
-                <p class="profile-title">PhD Student</p>
-                <p class="profile-affiliation">BCBL, Spain</p>
-                <p class="profile-location">📍 San Sebastian</p>
+    <div class="container">
+        <aside>
+            <div class="profile-photo">
+                <img src="images/profile.jpg" alt="Nirmitee Mulay" onerror="this.src='data:image/svg+xml,%3Csvg width=\'180\' height=\'180\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'180\' height=\'180\' fill=\'%23151515\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23555\' font-size=\'12\'%3EAdd Photo%3C/text%3E%3C/svg%3E'">
+                <h1>Nirmitee Mulay</h1>
+                <div class="affiliation">BCBL, Spain</div>
+                <div class="location">📍 San Sebastian</div>
             </div>
-
-            <!-- Navigation -->
-            <nav class="sidebar-nav">
-                <a href="index.html">Home</a>
-                <a href="research.html">Research</a>
-                <a href="publications.html">Publications</a>
-                <a href="scicomm.html">SciComm</a>
-                <a href="cv.html">CV</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-
-            <!-- Links -->
-            <div class="sidebar-links">
-                <a href="mailto:nirmiteemulay@gmail.com">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    Email
-                </a>
-                <a href="#" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.5 3.5L12 5l7.5 8-4.5-3.5z"></path>
-                    </svg>
-                    Google Scholar
-                </a>
-                <a href="#" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 5.378c.525 0 .947.431.947.947 0 .525-.422.947-.947.947-.516 0-.947-.422-.947-.947 0-.516.431-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V8.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V8.416zm1.444 8.847h2.297c2.359 0 4.028-1.313 4.028-3.822 0-2.09-1.313-3.831-3.85-3.831h-2.475v7.653z"/>
-                    </svg>
-                    ORCID
-                </a>
-                <a href="https://github.com/nirmitee-mulay" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    GitHub
-                </a>
-                <a href="#" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 10.5c-1.5-3-4-6-6-6C3 4.5 1.5 6.5 1.5 9c0 4.5 3 7.5 6 7.5 1.5 0 3-.75 4.5-2.25C13.5 15.75 15 16.5 16.5 16.5c3 0 6-3 6-7.5 0-2.5-1.5-4.5-4.5-4.5-2 0-4.5 3-6 6z"/>
-                    </svg>
-                    Bluesky
-                </a>
+            <div class="contact-links">
+                <a href="mailto:nirmiteemulay@gmail.com">Email</a>
+                <a href="#" target="_blank">Google Scholar</a>
+                <a href="#" target="_blank">ORCID</a>
+                <a href="https://github.com/nirmitee-mulay" target="_blank">GitHub</a>
+                <a href="#" target="_blank">Bluesky</a>
             </div>
-        </div>
+        </aside>
 
-        <!-- Footer -->
-        <div class="sidebar-footer">
-            <p>&copy; 2026 Nirmitee Mulay</p>
-        </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
+        <main>
+            <h2>Blog</h2>
+            <p>Coming soon - posts about consciousness research and open science.</p>
             
-            <div class="page-header">
-                <h1>Blog</h1>
-                <p class="subtitle">Thoughts on consciousness research, methods, and science</p>
-            </div>
+            <!-- TO HIDE: Remove the Blog link from top nav in all pages -->
+        </main>
+    </div>
 
-            <!-- Coming Soon (or replace with actual blog posts) -->
-            <section>
-                <div class="coming-soon">
-                    <h3>📝 Coming Soon</h3>
-                    <p style="color: var(--text-secondary); margin-top: 1rem;">
-                        Blog posts about consciousness research, methodological insights, and open science practices.
-                    </p>
-                </div>
-
-                <!-- Upcoming Topics Preview -->
-                <div style="margin-top: 3rem;">
-                    <h2>Planned Topics</h2>
-                    <div class="cards-grid">
-                        <div class="card">
-                            <div class="card-icon">🧪</div>
-                            <h3>Why Response Bias Matters</h3>
-                            <p>Deep dive into controlling for bias in unconscious processing research</p>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-icon">🔬</div>
-                            <h3>From Experiments to Models</h3>
-                            <p>My journey toward computational modeling in consciousness science</p>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-icon">📊</div>
-                            <h3>Open Science Toolkit</h3>
-                            <p>Practical tips for preregistration, data sharing, and reproducible research</p>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-icon">🎨</div>
-                            <h3>SciComm Through Art</h3>
-                            <p>How visual storytelling makes neuroscience accessible</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
-    <script src="script.js"></script>
+    <script>
+        const page = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.top-nav a').forEach(a => {
+            if (a.getAttribute('href') === page) a.classList.add('active');
+            else a.classList.remove('active');
+        });
+    </script>
 </body>
 </html>
-
-<!-- 
-====================
-HOW TO HIDE THIS PAGE UNTIL YOU HAVE CONTENT:
-====================
-
-Option 1: Remove from navigation
-- Open all HTML files (index.html, research.html, etc.)
-- In the sidebar-nav section, delete or comment out this line:
-  <a href="blog.html">Blog</a>
-
-Option 2: Keep page but show "Coming Soon"
-- Keep as is - the page currently shows "Coming Soon"
-
-Option 3: Add your first blog post
-- Replace the "coming-soon" div with:
-
-<div class="blog-grid">
-    <div class="blog-post">
-        <span class="blog-date">February 2026</span>
-        <h3>Your Blog Post Title</h3>
-        <p class="blog-excerpt">
-            A short excerpt or introduction to your blog post...
-        </p>
-        <a href="blog-post-1.html" class="card-link">Read more →</a>
-    </div>
-</div>
-
-Then create blog-post-1.html with your full post content.
--->
